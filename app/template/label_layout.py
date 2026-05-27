@@ -1,66 +1,97 @@
 class LabelLayout:
     """
-    Configuração central da etiqueta (100x60mm - Zebra 300 DPI)
-    Layout convertido corretamente de mm → pixels
+    Configuração central da etiqueta
+    Zebra 100x60mm - 300 DPI
     """
 
     # ==========================================
-    # DPI BASE
+    # DPI
     # ==========================================
     DPI = 300
 
     # ==========================================
-    # DIMENSÕES REAIS (100mm x 60mm)
+    # TAMANHO REAL
     # ==========================================
-    WIDTH = int((100 / 25.4) * DPI)   # ≈ 1181 px
-    HEIGHT = int((60 / 25.4) * DPI)   # ≈ 708 px
+    WIDTH = int((100 / 25.4) * DPI)
+    HEIGHT = int((60 / 25.4) * DPI)
+
+    # ==========================================
+    # CORES
+    # ==========================================
+    BACKGROUND = "#FFFFFF"
+    BORDER_COLOR = "black"
+    DIVIDER_COLOR = "#555555"
 
     # ==========================================
     # MARGENS
     # ==========================================
-    PADDING_X = 24
+    PADDING_X = 26
     PADDING_Y = 18
 
     # ==========================================
     # HEADER
     # ==========================================
-    HEADER_HEIGHT = 90
-
-    # ==========================================
-    # FONTES (AJUSTADAS PARA 300 DPI)
-    # ==========================================
-    TITLE_SIZE = 36
-    MATERIAL_SIZE = 48
-    LABEL_SIZE = 22
-    TEXT_SIZE = 28
-    SMALL_TEXT_SIZE = 24
-    BIG_TEXT_SIZE = 42
-    BARCODE_TEXT_SIZE = 28
+    HEADER_HEIGHT = 105
 
     # ==========================================
     # LOGO
     # ==========================================
-    LOGO_WIDTH = 380
+    LOGO_WIDTH = 520
 
     # ==========================================
-    # BARCODE (CRÍTICO PARA LEITURA EM 300 DPI)
+    # ÁREA BARCODE
     # ==========================================
-    BARCODE_WIDTH = 420
-    BARCODE_HEIGHT = 140
-
-    BARCODE_MODULE_WIDTH = 0.40
-    BARCODE_MODULE_HEIGHT = 110
-    BARCODE_QUIET_ZONE = 6.0
+    BARCODE_AREA_WIDTH = 320
 
     # ==========================================
-    # AJUSTES VISUAIS DO BLOCO
+    # ÁREA CONTEÚDO
     # ==========================================
-    BARCODE_TEXT_HEIGHT = 36
+    CONTENT_X = PADDING_X
+    CONTENT_Y = HEADER_HEIGHT + 20
+
+    CONTENT_WIDTH = WIDTH - BARCODE_AREA_WIDTH - (PADDING_X * 4)
+
+    # ==========================================
+    # ESPAÇAMENTOS
+    # ==========================================
+    SECTION_GAP = 18
+    LINE_GAP = 12
+
+    # ==========================================
+    # FONTES
+    # ==========================================
+    TITLE_SIZE = 38
+
+    MATERIAL_SIZE = 60
+
+    LABEL_SIZE = 26
+
+    TEXT_SIZE = 34
+
+    SMALL_TEXT_SIZE = 32
+
+    BIG_TEXT_SIZE = 56
+
+    BARCODE_TEXT_SIZE = 38
+
+    # ==========================================
+    # BARCODE
+    # ==========================================
+    BARCODE_WIDTH = 520
+    BARCODE_HEIGHT = 190
+
+    # barras mais largas
+    BARCODE_MODULE_WIDTH = 0.55
+
+    # altura real do barcode
+    BARCODE_MODULE_HEIGHT = 140
+
+    # espaço lateral obrigatório
+    BARCODE_QUIET_ZONE = 10.0
+
+    # número do código
+    BARCODE_TEXT_HEIGHT = 52
+    BARCODE_TEXT_SIZE = 38
+
+    # vertical
     BARCODE_ROTATION = 90
-
-    # ==========================================
-    # CORES
-    # ==========================================
-    BACKGROUND = "#FFFFFF"  # melhor para impressão (evita “acinzentado”)
-    BORDER_COLOR = "black"
-    DIVIDER_COLOR = "#888"  # mais contraste para impressão
