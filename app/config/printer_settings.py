@@ -1,0 +1,1 @@
+PRINTER_NAME = "ZDesigner ZD230-203dpi ZPL"
